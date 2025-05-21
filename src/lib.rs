@@ -2,14 +2,6 @@
 //!
 //! ## Calling convention for [`api`]
 //!
-//! ```rust
-//! use sysfs::api::psu::power_supply::{self, ChargeBehavior};
-//!
-//! // Read
-//! let _ = power_supply::charge_behaviour("BAT0").expect("a battery in your computer");
-//! // Write
-//! power_supply::set_charge_behavior("BAT0", ChargeBehavior::Auto)).expect("super user permissions");
-//! ```
 
 pub mod lib {
     pub use sysfs_lib::*;
@@ -18,6 +10,7 @@ pub mod lib {
 
 pub mod api {
     pub mod cpu;
+    pub mod drm;
     pub mod psu;
 }
 
